@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="zh-Hant" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Chun Yi - Taipei Medical University personal academic profile and digital card.">
+  <title>Chun Yi | Taipei Medical University</title>
+  <link rel="preconnect" href="https://cdnjs.cloudflare.com">
+  <link rel="stylesheet" href="style.css">
+  <script defer src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script defer src="script.js"></script>
+</head>
+<body>
+  <div class="page-shell">
+    <header class="site-header" aria-label="Primary navigation">
+      <a class="brand" href="#home" aria-label="Chun Yi home">
+        <span class="brand-mark">CY</span>
+        <span class="brand-text">Chun Yi</span>
+      </a>
+
+      <nav class="nav-links" aria-label="Section links">
+        <a href="#about" data-i18n="navAbout">關於我</a>
+        <a href="#research" data-i18n="navResearch">學術成果</a>
+        <a href="#contact" data-i18n="navContact">聯絡我</a>
+      </nav>
+
+      <div class="header-actions">
+        <button class="icon-button" id="languageToggle" type="button" aria-label="Switch language">
+          <span class="toggle-label">EN</span>
+        </button>
+        <button class="icon-button" id="themeToggle" type="button" aria-label="Toggle color theme">
+          <span class="theme-icon" aria-hidden="true">☾</span>
+        </button>
+      </div>
+    </header>
+
+    <main>
+      <section class="hero section-grid" id="home">
+        <div class="hero-copy reveal">
+          <p class="eyebrow" data-i18n="heroEyebrow">醫學科學研究所 · Taipei</p>
+          <h1>Chun Yi</h1>
+          <p class="hero-school">Taipei Medical University</p>
+          <p class="hero-text" data-i18n="heroText">
+            以醫學科學為核心，探索疾病機制、轉譯研究與臨床資料之間的連結，讓知識從實驗桌走向照護現場。
+          </p>
+          <div class="hero-actions">
+            <a class="primary-button" href="mailto:d119111001@tmu.edu.tw" data-i18n="emailMe">寄信給我</a>
+            <a class="secondary-button" href="#research" data-i18n="viewResearch">查看成果</a>
+          </div>
+        </div>
+
+        <div class="hero-visual reveal" aria-label="Animated biomedical data visualization">
+          <canvas id="bioCanvas" width="720" height="720"></canvas>
+          <div class="visual-card">
+            <span data-i18n="visualLabel">Research Focus</span>
+            <strong data-i18n="visualTitle">Medical Science</strong>
+          </div>
+        </div>
+      </section>
+
+      <section class="info-band reveal" aria-label="Profile highlights">
+        <article>
+          <span data-i18n="metricOne">研究領域</span>
+          <strong data-i18n="metricOneValue">醫學科學</strong>
+        </article>
+        <article>
+          <span data-i18n="metricTwo">所在地</span>
+          <strong>Taipei</strong>
+        </article>
+        <article>
+          <span data-i18n="metricThree">機構</span>
+          <strong>TMU</strong>
+        </article>
+      </section>
+
+      <section class="content-section section-grid" id="about">
+        <div class="section-heading reveal">
+          <p class="eyebrow" data-i18n="aboutEyebrow">About</p>
+          <h2 data-i18n="aboutTitle">關於我</h2>
+        </div>
+        <div class="section-body reveal">
+          <p data-i18n="aboutBody">
+            我隸屬於臺北醫學大學醫學科學研究所，關注生醫資料、疾病表徵與轉譯醫學的交會。這張電子名片以 PubMed 的乾淨資訊層級作為靈感，將研究者身份、聯絡方式與學術足跡集中在一頁。
+          </p>
+          <div class="tag-list" aria-label="Research interests">
+            <span data-i18n="tagOne">轉譯醫學</span>
+            <span data-i18n="tagTwo">生醫資料</span>
+            <span data-i18n="tagThree">疾病機制</span>
+            <span data-i18n="tagFour">學術溝通</span>
+          </div>
+        </div>
+      </section>
+
+      <section class="content-section research-section" id="research">
+        <div class="section-heading reveal">
+          <p class="eyebrow">PubMed</p>
+          <h2 data-i18n="researchTitle">學術成果</h2>
+          <p data-i18n="researchIntro">
+            以下依 PubMed 目前對「ChunYi Lai」的查詢狀態整理。若日後姓名或作者縮寫更新，可直接修改 script.js 中的資料陣列。
+          </p>
+        </div>
+
+        <div class="publication-panel reveal">
+          <div class="pubmed-search">
+            <div>
+              <span class="small-label" data-i18n="queryLabel">查詢字串</span>
+              <strong>ChunYi Lai</strong>
+            </div>
+            <a href="https://pubmed.ncbi.nlm.nih.gov/?term=ChunYi%20Lai" target="_blank" rel="noopener" data-i18n="openPubmed">開啟 PubMed</a>
+          </div>
+          <ul class="publication-list" id="publicationList"></ul>
+        </div>
+      </section>
+
+      <section class="content-section contact-section section-grid" id="contact">
+        <div class="section-heading reveal">
+          <p class="eyebrow" data-i18n="contactEyebrow">Contact</p>
+          <h2 data-i18n="contactTitle">聯絡我</h2>
+        </div>
+        <div class="contact-card reveal">
+          <span data-i18n="contactHint">歡迎聯繫研究交流、學術合作或課程相關討論。</span>
+          <a href="mailto:d119111001@tmu.edu.tw">d119111001@tmu.edu.tw</a>
+        </div>
+      </section>
+    </main>
+  </div>
+</body>
+</html>
