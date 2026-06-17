@@ -31,10 +31,10 @@ const translations = {
     interestTwoBody: "重視資料脈絡、文獻索引與成果呈現，讓研究資訊更容易被理解、追蹤與更新。",
     interestThreeBody: "從分子、細胞到臨床表徵探索疾病變化，累積可支撐醫學決策的知識基礎。",
     researchTitle: "學術成果",
-    researchIntro: "以下依 PubMed 目前對「ChunYi Lai」的查詢狀態整理。PubMed 會將此查詢轉譯為 Lai, Chunyi[Full Author Name]，目前列出 6 筆結果。",
+    researchIntro: "以下依 PubMed 目前對「ChunYi Lai」的查詢狀態整理。PubMed 會將此查詢轉譯為 Lai, Chunyi[Full Author Name]，目前列出 4 筆結果。",
     queryLabel: "查詢字串",
     openPubmed: "開啟 PubMed",
-    resultMeta: "PubMed query: ChunYi Lai · Results: 6",
+    resultMeta: "PubMed query: ChunYi Lai · Results: 4",
     contactEyebrow: "Contact",
     contactTitle: "聯絡我",
     contactHint: "歡迎聯繫研究交流、學術合作或課程相關討論。"
@@ -71,10 +71,10 @@ const translations = {
     interestTwoBody: "Emphasizing data context, literature indexing, and research presentation so academic information stays traceable and updateable.",
     interestThreeBody: "Exploring disease changes from molecular and cellular mechanisms to clinical phenotypes.",
     researchTitle: "Academic Work",
-    researchIntro: "This section reflects the current PubMed query state for “ChunYi Lai”. PubMed translates it as Lai, Chunyi[Full Author Name], with 6 results listed below.",
+    researchIntro: "This section reflects the current PubMed query state for “ChunYi Lai”. PubMed translates it as Lai, Chunyi[Full Author Name], with 4 results listed below.",
     queryLabel: "Search query",
     openPubmed: "Open PubMed",
-    resultMeta: "PubMed query: ChunYi Lai · Results: 6",
+    resultMeta: "PubMed query: ChunYi Lai · Results: 4",
     contactEyebrow: "Contact",
     contactTitle: "Contact",
     contactHint: "Open to research exchange, academic collaboration, and course-related discussion."
@@ -101,16 +101,6 @@ const publications = [
     title: "Carnosic Acid Alleviates Levodopa-Induced Dyskinesia and Cell Death in 6-Hydroxydopamine-lesioned Rats and in SH-SY5Y Cells.",
     meta: "Front Pharmacol · 2021 · PMID: 34434108 · DOI: 10.3389/fphar.2021.703894",
     url: "https://pubmed.ncbi.nlm.nih.gov/34434108/"
-  },
-  {
-    title: "Antiviral activity of Portulaca oleracea L. against influenza A viruses.",
-    meta: "J Ethnopharmacol · 2019 Sep 15 · PMID: 31170517 · DOI: 10.1016/j.jep.2019.112013",
-    url: "https://pubmed.ncbi.nlm.nih.gov/31170517/"
-  },
-  {
-    title: "Persistent nasal carriers of Acinetobacter baumannii in long-term-care facilities.",
-    meta: "Am J Infect Control · 2017 Jul 1 · PMID: 28284750 · DOI: 10.1016/j.ajic.2017.02.005",
-    url: "https://pubmed.ncbi.nlm.nih.gov/28284750/"
   }
 ];
 
