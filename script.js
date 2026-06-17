@@ -1,6 +1,7 @@
 const translations = {
   zh: {
     navAbout: "關於我",
+    navInterests: "研究興趣",
     navResearch: "學術成果",
     navContact: "聯絡我",
     heroEyebrow: "醫學科學研究所 · Taipei",
@@ -9,6 +10,10 @@ const translations = {
     viewResearch: "查看成果",
     visualLabel: "Research Focus",
     visualTitle: "Medical Science",
+    heroFocusTitle: "研究焦點",
+    heroFocusOne: "醫學科學與疾病機制探索",
+    heroFocusTwo: "生醫資料整理與學術成果呈現",
+    heroFocusThree: "轉譯研究與臨床照護連結",
     metricOne: "研究領域",
     metricOneValue: "醫學科學",
     metricTwo: "所在地",
@@ -20,6 +25,11 @@ const translations = {
     tagTwo: "生醫資料",
     tagThree: "疾病機制",
     tagFour: "學術溝通",
+    interestsKicker: "Research interests",
+    interestsTitle: "研究興趣",
+    interestOneBody: "把基礎研究、疾病機制與臨床需求連接起來，形成能被驗證與延伸的研究問題。",
+    interestTwoBody: "重視資料脈絡、文獻索引與成果呈現，讓研究資訊更容易被理解、追蹤與更新。",
+    interestThreeBody: "從分子、細胞到臨床表徵探索疾病變化，累積可支撐醫學決策的知識基礎。",
     researchTitle: "學術成果",
     researchIntro: "以下依 PubMed 目前對「ChunYi Lai」的查詢狀態整理。PubMed 會將此查詢轉譯為 Lai, Chunyi[Full Author Name]，目前列出 6 筆結果。",
     queryLabel: "查詢字串",
@@ -31,6 +41,7 @@ const translations = {
   },
   en: {
     navAbout: "About",
+    navInterests: "Interests",
     navResearch: "Publications",
     navContact: "Contact",
     heroEyebrow: "Graduate Institute of Medical Sciences · Taipei",
@@ -39,6 +50,10 @@ const translations = {
     viewResearch: "View Work",
     visualLabel: "Research Focus",
     visualTitle: "Medical Science",
+    heroFocusTitle: "Research Focus",
+    heroFocusOne: "Medical science and disease mechanisms",
+    heroFocusTwo: "Biomedical data and academic presentation",
+    heroFocusThree: "Translational research connected to care",
     metricOne: "Field",
     metricOneValue: "Medical Science",
     metricTwo: "Location",
@@ -50,6 +65,11 @@ const translations = {
     tagTwo: "Biomedical Data",
     tagThree: "Disease Mechanisms",
     tagFour: "Academic Communication",
+    interestsKicker: "Research interests",
+    interestsTitle: "Research Interests",
+    interestOneBody: "Connecting basic research, disease mechanisms, and clinical needs into questions that can be tested and extended.",
+    interestTwoBody: "Emphasizing data context, literature indexing, and research presentation so academic information stays traceable and updateable.",
+    interestThreeBody: "Exploring disease changes from molecular and cellular mechanisms to clinical phenotypes.",
     researchTitle: "Academic Work",
     researchIntro: "This section reflects the current PubMed query state for “ChunYi Lai”. PubMed translates it as Lai, Chunyi[Full Author Name], with 6 results listed below.",
     queryLabel: "Search query",
@@ -100,6 +120,7 @@ let currentTheme = localStorage.getItem("theme") || "light";
 const languageToggle = document.querySelector("#languageToggle");
 const themeToggle = document.querySelector("#themeToggle");
 const publicationList = document.querySelector("#publicationList");
+const scrollProgress = document.querySelector(".scroll-progress");
 
 function applyTranslations() {
   document.documentElement.lang = currentLanguage === "zh" ? "zh-Hant" : "en";
@@ -231,6 +252,13 @@ function initCanvas() {
   requestAnimationFrame(draw);
 }
 
+function updateScrollProgress() {
+  if (!scrollProgress) return;
+  const maxScroll = document.documentElement.scrollHeight - window.innerHeight;
+  const progress = maxScroll > 0 ? (window.scrollY / maxScroll) * 100 : 0;
+  scrollProgress.style.width = `${Math.min(progress, 100)}%`;
+}
+
 languageToggle.addEventListener("click", () => {
   currentLanguage = currentLanguage === "zh" ? "en" : "zh";
   localStorage.setItem("language", currentLanguage);
@@ -246,5 +274,7 @@ themeToggle.addEventListener("click", () => {
 applyTheme();
 applyTranslations();
 initCanvas();
+updateScrollProgress();
 
 window.addEventListener("load", initAnimations);
+window.addEventListener("scroll", updateScrollProgress, { passive: true });

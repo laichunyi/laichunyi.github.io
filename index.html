@@ -11,18 +11,26 @@
   <script defer src="script.js"></script>
 </head>
 <body>
-  <div class="page-shell">
-    <header class="site-header" aria-label="Primary navigation">
-      <a class="brand" href="#home" aria-label="Chun Yi home">
+  <div id="top" aria-hidden="true"></div>
+  <div class="ambient-layer" aria-hidden="true"></div>
+  <div class="scroll-progress" aria-hidden="true"></div>
+
+  <header class="site-header">
+    <nav class="nav" aria-label="Primary navigation">
+      <a class="brand" href="#top">
         <span class="brand-mark">CY</span>
-        <span class="brand-text">Chun Yi</span>
+        <span class="brand-stack">
+          <span class="brand-text">Chun Yi</span>
+          <span class="brand-sub">Academic Profile</span>
+        </span>
       </a>
 
-      <nav class="nav-links" aria-label="Section links">
-        <a href="#about" data-i18n="navAbout">關於我</a>
-        <a href="#research" data-i18n="navResearch">學術成果</a>
-        <a href="#contact" data-i18n="navContact">聯絡我</a>
-      </nav>
+      <ul class="nav-menu" id="navMenu">
+        <li><a href="#about" data-i18n="navAbout">關於我</a></li>
+        <li><a href="#interests" data-i18n="navInterests">研究興趣</a></li>
+        <li><a href="#research" data-i18n="navResearch">學術成果</a></li>
+        <li><a href="#contact" data-i18n="navContact">聯絡我</a></li>
+      </ul>
 
       <div class="header-actions">
         <button class="icon-button" id="languageToggle" type="button" aria-label="Switch language">
@@ -32,72 +40,120 @@
           <span class="theme-icon" aria-hidden="true">☾</span>
         </button>
       </div>
-    </header>
+    </nav>
+  </header>
 
-    <main>
-      <section class="hero section-grid" id="home">
+  <main>
+    <section class="hero stage" id="home">
+      <div class="hero-gridline" aria-hidden="true"></div>
+      <div class="hero-layout">
         <div class="hero-copy reveal">
-          <p class="eyebrow" data-i18n="heroEyebrow">醫學科學研究所 · Taipei</p>
+          <p class="system-tag" data-i18n="heroEyebrow">Research Node 01 · Taipei</p>
           <h1>Chun Yi</h1>
           <p class="hero-school">Taipei Medical University</p>
           <p class="hero-text" data-i18n="heroText">
             以醫學科學為核心，探索疾病機制、轉譯研究與臨床資料之間的連結，讓知識從實驗桌走向照護現場。
           </p>
           <div class="hero-actions">
-            <a class="primary-button" href="mailto:d119111001@tmu.edu.tw" data-i18n="emailMe">寄信給我</a>
-            <a class="secondary-button" href="#research" data-i18n="viewResearch">查看成果</a>
+            <a class="primary-button" href="#research" data-i18n="viewResearch">查看成果</a>
+            <a class="secondary-button" href="mailto:d119111001@tmu.edu.tw" data-i18n="emailMe">寄信給我</a>
           </div>
         </div>
 
-        <div class="hero-visual reveal" aria-label="Animated biomedical data visualization">
-          <canvas id="bioCanvas" width="720" height="720"></canvas>
-          <div class="visual-card">
-            <span data-i18n="visualLabel">Research Focus</span>
-            <strong data-i18n="visualTitle">Medical Science</strong>
+        <aside class="hero-data reveal">
+          <h2 data-i18n="heroFocusTitle">研究焦點</h2>
+          <ul>
+            <li data-i18n="heroFocusOne">醫學科學與疾病機制探索</li>
+            <li data-i18n="heroFocusTwo">生醫資料整理與學術成果呈現</li>
+            <li data-i18n="heroFocusThree">轉譯研究與臨床照護連結</li>
+          </ul>
+          <div class="hero-tags">
+            <span>Medical Science</span>
+            <span>TMU</span>
+            <span>PubMed</span>
+          </div>
+        </aside>
+      </div>
+
+      <div class="hero-visual reveal" aria-label="Animated biomedical data visualization">
+        <canvas id="bioCanvas" width="960" height="520"></canvas>
+        <div class="visual-card">
+          <span data-i18n="visualLabel">Research Focus</span>
+          <strong data-i18n="visualTitle">Medical Science</strong>
+        </div>
+      </div>
+
+      <div class="hero-footer" aria-hidden="true">
+        <p>Systems Active</p>
+        <p>Academic Interface</p>
+      </div>
+    </section>
+
+    <section class="section section-full stage" id="about">
+      <div class="section-shell">
+        <div class="section-head reveal">
+          <p class="section-no">01</p>
+          <div>
+            <p class="kicker" data-i18n="aboutEyebrow">About</p>
+            <h2 data-i18n="aboutTitle">關於我</h2>
           </div>
         </div>
-      </section>
 
-      <section class="info-band reveal" aria-label="Profile highlights">
-        <article>
-          <span data-i18n="metricOne">研究領域</span>
-          <strong data-i18n="metricOneValue">醫學科學</strong>
-        </article>
-        <article>
-          <span data-i18n="metricTwo">所在地</span>
-          <strong>Taipei</strong>
-        </article>
-        <article>
-          <span data-i18n="metricThree">機構</span>
-          <strong>TMU</strong>
-        </article>
-      </section>
+        <div class="about-grid">
+          <article class="panel reveal">
+            <p data-i18n="aboutBody">
+              我隸屬於臺北醫學大學醫學科學研究所，關注生醫資料、疾病表徵與轉譯醫學的交會。這張電子名片以 PubMed 的乾淨資訊層級作為靈感，將研究者身份、聯絡方式與學術足跡集中在一頁。
+            </p>
+          </article>
 
-      <section class="content-section section-grid" id="about">
-        <div class="section-heading reveal">
-          <p class="eyebrow" data-i18n="aboutEyebrow">About</p>
-          <h2 data-i18n="aboutTitle">關於我</h2>
+          <aside class="panel profile-panel reveal">
+            <h3>Quick Profile</h3>
+            <p><strong data-i18n="metricThree">機構</strong><span>Taipei Medical University</span></p>
+            <p><strong data-i18n="metricOne">研究領域</strong><span data-i18n="metricOneValue">醫學科學</span></p>
+            <p><strong data-i18n="metricTwo">所在地</strong><span>Taipei</span></p>
+          </aside>
         </div>
-        <div class="section-body reveal">
-          <p data-i18n="aboutBody">
-            我隸屬於臺北醫學大學醫學科學研究所，關注生醫資料、疾病表徵與轉譯醫學的交會。這張電子名片以 PubMed 的乾淨資訊層級作為靈感，將研究者身份、聯絡方式與學術足跡集中在一頁。
-          </p>
-          <div class="tag-list" aria-label="Research interests">
-            <span data-i18n="tagOne">轉譯醫學</span>
-            <span data-i18n="tagTwo">生醫資料</span>
-            <span data-i18n="tagThree">疾病機制</span>
-            <span data-i18n="tagFour">學術溝通</span>
+      </div>
+    </section>
+
+    <section class="section section-full stage" id="interests">
+      <div class="section-shell">
+        <div class="section-head reveal">
+          <p class="section-no">02</p>
+          <div>
+            <p class="kicker" data-i18n="interestsKicker">Research interests</p>
+            <h2 data-i18n="interestsTitle">研究興趣</h2>
           </div>
         </div>
-      </section>
 
-      <section class="content-section research-section" id="research">
-        <div class="section-heading reveal">
-          <p class="eyebrow">PubMed</p>
-          <h2 data-i18n="researchTitle">學術成果</h2>
-          <p data-i18n="researchIntro">
-            以下依 PubMed 目前對「ChunYi Lai」的查詢狀態整理。若日後姓名或作者縮寫更新，可直接修改 script.js 中的資料陣列。
-          </p>
+        <div class="interest-grid">
+          <article class="panel interest-card reveal">
+            <h3 data-i18n="tagOne">轉譯醫學</h3>
+            <p data-i18n="interestOneBody">把基礎研究、疾病機制與臨床需求連接起來，形成能被驗證與延伸的研究問題。</p>
+          </article>
+          <article class="panel interest-card reveal">
+            <h3 data-i18n="tagTwo">生醫資料</h3>
+            <p data-i18n="interestTwoBody">重視資料脈絡、文獻索引與成果呈現，讓研究資訊更容易被理解、追蹤與更新。</p>
+          </article>
+          <article class="panel interest-card reveal">
+            <h3 data-i18n="tagThree">疾病機制</h3>
+            <p data-i18n="interestThreeBody">從分子、細胞到臨床表徵探索疾病變化，累積可支撐醫學決策的知識基礎。</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section-full stage" id="research">
+      <div class="section-shell">
+        <div class="section-head reveal">
+          <p class="section-no">03</p>
+          <div>
+            <p class="kicker">PubMed</p>
+            <h2 data-i18n="researchTitle">學術成果</h2>
+            <p data-i18n="researchIntro">
+              以下依 PubMed 目前對「ChunYi Lai」的查詢狀態整理。PubMed 會將此查詢轉譯為 Lai, Chunyi[Full Author Name]，目前列出 6 筆結果。
+            </p>
+          </div>
         </div>
 
         <div class="publication-panel reveal">
@@ -110,19 +166,30 @@
           </div>
           <ul class="publication-list" id="publicationList"></ul>
         </div>
-      </section>
+      </div>
+    </section>
 
-      <section class="content-section contact-section section-grid" id="contact">
-        <div class="section-heading reveal">
-          <p class="eyebrow" data-i18n="contactEyebrow">Contact</p>
-          <h2 data-i18n="contactTitle">聯絡我</h2>
+    <section class="section section-full stage" id="contact">
+      <div class="section-shell">
+        <div class="section-head reveal">
+          <p class="section-no">04</p>
+          <div>
+            <p class="kicker" data-i18n="contactEyebrow">Contact</p>
+            <h2 data-i18n="contactTitle">聯絡我</h2>
+          </div>
         </div>
-        <div class="contact-card reveal">
-          <span data-i18n="contactHint">歡迎聯繫研究交流、學術合作或課程相關討論。</span>
+
+        <div class="panel contact-panel reveal">
+          <p data-i18n="contactHint">歡迎聯繫研究交流、學術合作或課程相關討論。</p>
           <a href="mailto:d119111001@tmu.edu.tw">d119111001@tmu.edu.tw</a>
         </div>
-      </section>
-    </main>
-  </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <p>Built with OpenAI Codex</p>
+    <a href="#top">Back to top</a>
+  </footer>
 </body>
 </html>
